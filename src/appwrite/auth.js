@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import conf from '../conf/Conf.js'
 import { Client, Account, ID } from "appwrite";
 
@@ -38,6 +39,7 @@ export class AuthService{
         }
         catch(error){
             console.log("error here")
+            toast.error("User Already Exists!!")
             throw error;
         }
         
@@ -52,6 +54,7 @@ export class AuthService{
             
         }
         catch(error){
+            toast.error(error.message)
             throw error
         }
     }

@@ -5,12 +5,12 @@ import {useSelector} from "react-redux";
 import LogoutBtn from "./LogoutBtn";
 import Container  from "../container/Container.jsx";
 import logo from '../../assets/Logo.jpg'
-import SignUp from "../Signup.jsx"
 
 function Header(){
 
     const authStatus = useSelector((state) => state.auth.status)
     const navigate = useNavigate();
+    const isAuthenticated = useSelector(state => state.auth.status)
     const navItems = [
         {
             name: "Home",
@@ -35,9 +35,9 @@ function Header(){
             slug: "/about-us",
         },
         {
-            name: "Sign up",
+            name: "Login",
             active: !authStatus,
-            slug: "/sign-up",
+            slug: "/auth/login",
         }
     ]
     return(

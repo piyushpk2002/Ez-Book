@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap');
+@import "@flaticon/flaticon-uicons/css/all/all";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,4 +72,17 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.placeholder-white::-webkit-input-placeholder {
+  color: rgb(238, 229, 229);
+}
+
+.oleo-script{
+  font-family: "Oleo Script", system-ui;
+  font-weight: 700;
+}
+
+.text-shadow{
+  text-shadow: 3px 3px black;
 }

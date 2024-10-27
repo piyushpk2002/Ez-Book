@@ -10,7 +10,9 @@ import Home from "./pages/Home"
 import About from './pages/About-us.jsx'
 import ServicesHome from "./components/services/Services_Home"
 import FoodServices from './components/services/FoodServices.jsx'
-import SignUp from './pages/SignUp.jsx'
+import Login from './components/Login.jsx'
+import Auth from './pages/Auth.jsx'
+import Signup from './components/Signup.jsx'
 
 
 const router = createBrowserRouter([{
@@ -42,10 +44,19 @@ const router = createBrowserRouter([{
       element: <FoodServices />
     },
     {
-      path:"/sign-up",
-      element: <SignUp />
-    }
-
+      path:"/auth",
+      element: <Auth />,
+      children: [
+        {
+          path: "/auth/sign-up",
+          element: <Signup/>
+        },
+        {
+          path: "/auth/login",
+          element: <Login/>
+        }
+      ]
+    },
   ]
 }])
 
